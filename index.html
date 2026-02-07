@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderland Casino Coin Flip</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee">
+            <span>🎰 WELCOME TO RETRO CASINO COIN FLIP 🎰 • TRY YOUR LUCK 🎰 • BEAT THE HIGH SCORE 🎰 • WIN BIG 🎰</span>
+            <span>🎰 WELCOME TO RETRO CASINO COIN FLIP 🎰 • TRY YOUR LUCK 🎰 • BEAT THE HIGH SCORE 🎰 • WIN BIG 🎰</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="neon-border"></div>
+                <h1 class="neon-text">
+                    <i class="fas fa-coins"></i>
+                    <span class="title-text">WONDERLAND CASINO</span>
+                </h1>
+                <h1 class="neon-text">
+                    <span class="flashing">COIN FLIP</span>
+                </h1>
+                <div class="neon-border"></div>
+            </div>
+            <p class="subtitle">💰 PREDICT THE FLIP • BUILD YOUR STREAK • BEAT THE HOUSE 💰</p>
+            <div class="controls-hint">
+                <div class="key-hint">H = HEADS</div>
+                <div class="key-hint">T = TAILS</div>
+                <div class="key-hint">F = FLIP</div>
+                <div class="key-hint">A = ADD SCORE</div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="score-display">
+                <div class="score-box current-score">
+                    <div class="score-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>CURRENT SCORE</h3>
+                    </div>
+                    <div class="score-value retro-digital" id="currentScore">0000</div>
+                    <div class="streak">
+                        <i class="fas fa-fire"></i>
+                        STREAK: <span class="streak-value" id="streak">0</span>
+                    </div>
+                </div>
+                
+                <div class="coin-section">
+                    <div class="coin-container" id="coinContainer">
+                        <div class="coin-frame">
+                            <div class="coin" id="coin">
+                                <div class="coin-front">
+                                    <div class="coin-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <div class="coin-text">HEADS</div>
+                                </div>
+                                <div class="coin-back">
+                                    <div class="coin-icon">
+                                        <i class="fas fa-anchor"></i>
+                                    </div>
+                                    <div class="coin-text">TAILS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-display">
+                        <div class="last-result" id="lastResult">READY TO PLAY!</div>
+                    </div>
+                </div>
+                
+                <div class="score-box high-score">
+                    <div class="score-header">
+                        <i class="fas fa-trophy"></i>
+                        <h3>YOUR BEST</h3>
+                    </div>
+                    <div class="score-value retro-digital" id="highScore">0000</div>
+                    <div class="record">
+                        <i class="fas fa-star"></i>
+                        RECORD: <span class="record-value" id="recordStreak">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="prediction-section">
+                    <h3><i class="fas fa-dice"></i> CHOOSE A SIDE:</h3>
+                    <div class="prediction-buttons">
+                        <button class="btn retro-btn heads-btn" id="headsBtn">
+                            <i class="fas fa-crown"></i>
+                            <span class="btn-text">HEADS</span>
+                            <span class="btn-hint">(H)</span>
+                        </button>
+                        <button class="btn retro-btn tails-btn" id="tailsBtn">
+                            <i class="fas fa-anchor"></i>
+                            <span class="btn-text">TAILS</span>
+                            <span class="btn-hint">(T)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn retro-btn flip-btn" id="flipBtn">
+                        <i class="fas fa-sync-alt spinning"></i>
+                        <span class="btn-text">FLIP COIN</span>
+                        <span class="btn-hint">(F)</span>
+                    </button>
+                    <button class="btn retro-btn score-btn" id="addScoreBtn">
+                        <i class="fas fa-upload"></i>
+                        <span class="btn-text">ADD TO LEADERBOARD</span>
+                        <span class="btn-hint">(A)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="leaderboard">
+            <div class="leaderboard-header">
+                <h2 class="neon-text">
+                    <i class="fas fa-trophy"></i>
+                    CASINO LEADERBOARD
+                </h2>
+            </div>
+            
+            <div class="table-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th class="rank-header"><i class="fas fa-hashtag"></i> RANK</th>
+                            <th class="player-header"><i class="fas fa-user"></i> PLAYER</th>
+                            <th class="score-header"><i class="fas fa-coins"></i> SCORE</th>
+                            <th class="streak-header"><i class="fas fa-fire"></i> STREAK</th>
+                            <th class="date-header"><i class="fas fa-calendar-alt"></i> DATE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Leaderboard rows will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="leaderboard-footer">
+                <div class="casino-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    TIP: Higher streaks give bonus points! 10 × streak multiplier
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="casino-chip">
+                        <i class="fas fa-poker-chip"></i>
+                    </div>
+                    <p>Wonderland Casino &copy; 2000s • AppleTheCode</p>
+                </div>
+                <div class="footer-right">
+                    <div class="age-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        FOR ENTERTAINMENT ONLY • NO REAL MONEY
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Player Name Modal -->
+    <div class="modal" id="playerModal">
+        <div class="modal-content retro-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-trophy"></i> ENTER THE CASINO HALL OF FAME!</h3>
+                <div class="modal-close" id="cancelSaveBtn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-score">
+                    <div class="score-label">YOUR SCORE:</div>
+                    <div class="score-display-modal retro-digital" id="finalScoreDisplay">0000</div>
+                </div>
+                <div class="form-group">
+                    <label for="playerName"><i class="fas fa-user-edit"></i> ENTER YOUR CASINO ALIAS:</label>
+                    <input type="text" id="playerName" placeholder="CASINO PLAYER" maxlength="20">
+                </div>
+                <div class="modal-hint">
+                    <i class="fas fa-keyboard"></i> Press ENTER to save or ESC to cancel
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn retro-btn save-btn" id="saveScoreBtn">
+                    <i class="fas fa-save"></i> SAVE TO LEADERBOARD (ENTER)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="retro-effects">
+        <div class="scanlines"></div>
+        <div class="vignette"></div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
